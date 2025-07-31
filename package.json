@@ -1,15 +1,58 @@
 {
   "name": "astroblock-sdk",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A TypeScript SDK for querying Astroblock game data via GraphQL",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --dts-resolve",
+    "build:check": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "astroblock",
+    "graphql",
+    "sdk",
+    "typescript",
+    "blockchain",
+    "game"
+  ],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AstroblockStudio/sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AstroblockStudio/sdk/issues"
+  },
+  "homepage": "https://github.com/AstroblockStudio/sdk#readme",
   "dependencies": {
     "graphql-request": "^7.2.0",
     "graphql-tag": "^2.12.6"
+  },
+  "peerDependencies": {
+    "graphql": ">=15.0.0"
+  },
+  "devDependencies": {
+    "graphql": "^16.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
