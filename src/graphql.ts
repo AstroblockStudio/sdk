@@ -1168,9 +1168,13 @@ export type TokenLootStatPage = {
 
 export type UndiscoveredStar = {
   __typename?: 'UndiscoveredStar';
+  gameX?: Maybe<Scalars['Int']['output']>;
+  gameY?: Maybe<Scalars['Int']['output']>;
   height?: Maybe<Scalars['BigInt']['output']>;
   id: Scalars['BigInt']['output'];
   name?: Maybe<Scalars['String']['output']>;
+  quadrantX?: Maybe<Scalars['Int']['output']>;
+  quadrantY?: Maybe<Scalars['Int']['output']>;
   radius?: Maybe<Scalars['BigInt']['output']>;
   type?: Maybe<Scalars['JSON']['output']>;
   width?: Maybe<Scalars['BigInt']['output']>;
@@ -1181,6 +1185,22 @@ export type UndiscoveredStar = {
 export type UndiscoveredStarFilter = {
   AND?: InputMaybe<Array<InputMaybe<UndiscoveredStarFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<UndiscoveredStarFilter>>>;
+  gameX?: InputMaybe<Scalars['Int']['input']>;
+  gameX_gt?: InputMaybe<Scalars['Int']['input']>;
+  gameX_gte?: InputMaybe<Scalars['Int']['input']>;
+  gameX_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  gameX_lt?: InputMaybe<Scalars['Int']['input']>;
+  gameX_lte?: InputMaybe<Scalars['Int']['input']>;
+  gameX_not?: InputMaybe<Scalars['Int']['input']>;
+  gameX_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  gameY?: InputMaybe<Scalars['Int']['input']>;
+  gameY_gt?: InputMaybe<Scalars['Int']['input']>;
+  gameY_gte?: InputMaybe<Scalars['Int']['input']>;
+  gameY_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  gameY_lt?: InputMaybe<Scalars['Int']['input']>;
+  gameY_lte?: InputMaybe<Scalars['Int']['input']>;
+  gameY_not?: InputMaybe<Scalars['Int']['input']>;
+  gameY_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
   height?: InputMaybe<Scalars['BigInt']['input']>;
   height_gt?: InputMaybe<Scalars['BigInt']['input']>;
   height_gte?: InputMaybe<Scalars['BigInt']['input']>;
@@ -1207,6 +1227,22 @@ export type UndiscoveredStarFilter = {
   name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   name_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   name_starts_with?: InputMaybe<Scalars['String']['input']>;
+  quadrantX?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_gt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_gte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  quadrantX_lt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_lte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_not?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  quadrantY?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_gt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_gte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  quadrantY_lt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_lte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_not?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
   radius?: InputMaybe<Scalars['BigInt']['input']>;
   radius_gt?: InputMaybe<Scalars['BigInt']['input']>;
   radius_gte?: InputMaybe<Scalars['BigInt']['input']>;
@@ -1418,7 +1454,7 @@ export type UndiscoveredStarQueryVariables = Exact<{
 }>;
 
 
-export type UndiscoveredStarQuery = { __typename?: 'Query', undiscoveredStar?: { __typename?: 'UndiscoveredStar', id: any, x?: any | null, y?: any | null, width?: any | null, height?: any | null, radius?: any | null, name?: string | null, type?: any | null } | null };
+export type UndiscoveredStarQuery = { __typename?: 'Query', undiscoveredStar?: { __typename?: 'UndiscoveredStar', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, gameX?: number | null, gameY?: number | null, width?: any | null, height?: any | null, radius?: any | null, name?: string | null, type?: any | null } | null };
 
 export type UndiscoveredStarsQueryVariables = Exact<{
   where?: InputMaybe<UndiscoveredStarFilter>;
@@ -1430,7 +1466,7 @@ export type UndiscoveredStarsQueryVariables = Exact<{
 }>;
 
 
-export type UndiscoveredStarsQuery = { __typename?: 'Query', undiscoveredStars: { __typename?: 'UndiscoveredStarPage', totalCount: number, items: Array<{ __typename?: 'UndiscoveredStar', id: any, x?: any | null, y?: any | null, width?: any | null, height?: any | null, radius?: any | null, name?: string | null, type?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type UndiscoveredStarsQuery = { __typename?: 'Query', undiscoveredStars: { __typename?: 'UndiscoveredStarPage', totalCount: number, items: Array<{ __typename?: 'UndiscoveredStar', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, gameX?: number | null, gameY?: number | null, width?: any | null, height?: any | null, radius?: any | null, name?: string | null, type?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type GameStatsQueryVariables = Exact<{
   id: Scalars['String']['input'];
@@ -1656,6 +1692,10 @@ export const UndiscoveredStarDocument = gql`
     id
     x
     y
+    quadrantX
+    quadrantY
+    gameX
+    gameY
     width
     height
     radius
@@ -1678,6 +1718,10 @@ export const UndiscoveredStarsDocument = gql`
       id
       x
       y
+      quadrantX
+      quadrantY
+      gameX
+      gameY
       width
       height
       radius
