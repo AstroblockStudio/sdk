@@ -945,6 +945,8 @@ export type Query = {
   playerWeeklyLoot?: Maybe<PlayerWeeklyLoot>;
   playerWeeklyLoots: PlayerWeeklyLootPage;
   players: PlayerPage;
+  story?: Maybe<Story>;
+  storys: StoryPage;
   tokenLootStat?: Maybe<TokenLootStat>;
   tokenLootStats: TokenLootStatPage;
   undiscoveredStar?: Maybe<UndiscoveredStar>;
@@ -1077,6 +1079,21 @@ export type QueryPlayersArgs = {
 };
 
 
+export type QueryStoryArgs = {
+  id: Scalars['BigInt']['input'];
+};
+
+
+export type QueryStorysArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<StoryFilter>;
+};
+
+
 export type QueryTokenLootStatArgs = {
   token: Scalars['String']['input'];
 };
@@ -1119,6 +1136,139 @@ export type QueryWorldSettingssArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   orderDirection?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<WorldSettingsFilter>;
+};
+
+export type Story = {
+  __typename?: 'Story';
+  coin?: Maybe<Scalars['String']['output']>;
+  creator?: Maybe<Scalars['String']['output']>;
+  creatorPlayer?: Maybe<Player>;
+  entity?: Maybe<Entity>;
+  entityId?: Maybe<Scalars['BigInt']['output']>;
+  id: Scalars['BigInt']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  prompt?: Maybe<Scalars['String']['output']>;
+  symbol?: Maybe<Scalars['String']['output']>;
+  timestamp?: Maybe<Scalars['BigInt']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  transactionHash?: Maybe<Scalars['String']['output']>;
+};
+
+export type StoryFilter = {
+  AND?: InputMaybe<Array<InputMaybe<StoryFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<StoryFilter>>>;
+  coin?: InputMaybe<Scalars['String']['input']>;
+  coin_contains?: InputMaybe<Scalars['String']['input']>;
+  coin_ends_with?: InputMaybe<Scalars['String']['input']>;
+  coin_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  coin_not?: InputMaybe<Scalars['String']['input']>;
+  coin_not_contains?: InputMaybe<Scalars['String']['input']>;
+  coin_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  coin_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  coin_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  coin_starts_with?: InputMaybe<Scalars['String']['input']>;
+  creator?: InputMaybe<Scalars['String']['input']>;
+  creator_contains?: InputMaybe<Scalars['String']['input']>;
+  creator_ends_with?: InputMaybe<Scalars['String']['input']>;
+  creator_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  creator_not?: InputMaybe<Scalars['String']['input']>;
+  creator_not_contains?: InputMaybe<Scalars['String']['input']>;
+  creator_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  creator_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  creator_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  creator_starts_with?: InputMaybe<Scalars['String']['input']>;
+  entityId?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  entityId_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_not?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  id?: InputMaybe<Scalars['BigInt']['input']>;
+  id_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  id_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  id_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  id_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  id_not?: InputMaybe<Scalars['BigInt']['input']>;
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  image_contains?: InputMaybe<Scalars['String']['input']>;
+  image_ends_with?: InputMaybe<Scalars['String']['input']>;
+  image_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_not?: InputMaybe<Scalars['String']['input']>;
+  image_not_contains?: InputMaybe<Scalars['String']['input']>;
+  image_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  image_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  image_starts_with?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_ends_with?: InputMaybe<Scalars['String']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  name_starts_with?: InputMaybe<Scalars['String']['input']>;
+  prompt?: InputMaybe<Scalars['String']['input']>;
+  prompt_contains?: InputMaybe<Scalars['String']['input']>;
+  prompt_ends_with?: InputMaybe<Scalars['String']['input']>;
+  prompt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  prompt_not?: InputMaybe<Scalars['String']['input']>;
+  prompt_not_contains?: InputMaybe<Scalars['String']['input']>;
+  prompt_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  prompt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  prompt_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  prompt_starts_with?: InputMaybe<Scalars['String']['input']>;
+  symbol?: InputMaybe<Scalars['String']['input']>;
+  symbol_contains?: InputMaybe<Scalars['String']['input']>;
+  symbol_ends_with?: InputMaybe<Scalars['String']['input']>;
+  symbol_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  symbol_not?: InputMaybe<Scalars['String']['input']>;
+  symbol_not_contains?: InputMaybe<Scalars['String']['input']>;
+  symbol_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  symbol_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  symbol_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  symbol_starts_with?: InputMaybe<Scalars['String']['input']>;
+  timestamp?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  timestamp_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_not?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_ends_with?: InputMaybe<Scalars['String']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  title_starts_with?: InputMaybe<Scalars['String']['input']>;
+  transactionHash?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_contains?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_ends_with?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  transactionHash_not?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_not_contains?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  transactionHash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_starts_with?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type StoryPage = {
+  __typename?: 'StoryPage';
+  items: Array<Story>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
 };
 
 export type TokenLootStat = {
@@ -1684,6 +1834,25 @@ export type DropsQueryVariables = Exact<{
 
 
 export type DropsQuery = { __typename?: 'Query', drops: { __typename?: 'DropPage', totalCount: number, items: Array<{ __typename?: 'Drop', data?: any | null, dropId: string, decision: Decision, timestamp: any, transactionHash: string }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+
+export type StoryQueryVariables = Exact<{
+  id: Scalars['BigInt']['input'];
+}>;
+
+
+export type StoryQuery = { __typename?: 'Query', story?: { __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null } | null };
+
+export type StorysQueryVariables = Exact<{
+  where?: InputMaybe<StoryFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', totalCount: number, items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 
 export const UndiscoveredStarDocument = gql`
@@ -2472,6 +2641,98 @@ export const DropsDocument = gql`
   }
 }
     `;
+export const StoryDocument = gql`
+    query story($id: BigInt!) {
+  story(id: $id) {
+    id
+    entityId
+    creator
+    title
+    prompt
+    transactionHash
+    timestamp
+    coin
+    image
+    name
+    symbol
+  }
+}
+    `;
+export const StorysDocument = gql`
+    query storys($where: StoryFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  storys(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    items {
+      id
+      entityId
+      creator
+      entity {
+        id
+        x
+        y
+        quadrantX
+        quadrantY
+        radius
+        discoveredAt
+        name
+        type
+        entityType
+        module
+        moduleName
+      }
+      creatorPlayer {
+        address
+        anchoredToStarId
+        previousX
+        previousY
+        x
+        y
+        quadrantX
+        quadrantY
+        speed
+        arrivingAt
+        lastMovedAt
+        lastWormholeUsedAt
+        lastMoveTransactionHash
+        totalDistanceTraveled
+        holding
+        totalBurned
+        discoveredCount
+        lastLootedDay
+        lootCount
+        allTimeLootCount
+        lootStreak
+        fid
+        pfpUrl
+        username
+        ens
+        createdAt
+      }
+      title
+      prompt
+      transactionHash
+      timestamp
+      coin
+      image
+      name
+      symbol
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
 
@@ -2545,6 +2806,12 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     drops(variables?: DropsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DropsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<DropsQuery>(DropsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'drops', 'query', variables);
+    },
+    story(variables: StoryQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<StoryQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<StoryQuery>(StoryDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'story', 'query', variables);
+    },
+    storys(variables?: StorysQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<StorysQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<StorysQuery>(StorysDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'storys', 'query', variables);
     }
   };
 }
