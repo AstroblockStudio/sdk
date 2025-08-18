@@ -1149,6 +1149,7 @@ export type Story = {
   image?: Maybe<Scalars['String']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   prompt?: Maybe<Scalars['String']['output']>;
+  status?: Maybe<StoryStatus>;
   symbol?: Maybe<Scalars['String']['output']>;
   timestamp?: Maybe<Scalars['BigInt']['output']>;
   title?: Maybe<Scalars['String']['output']>;
@@ -1224,6 +1225,10 @@ export type StoryFilter = {
   prompt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   prompt_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   prompt_starts_with?: InputMaybe<Scalars['String']['input']>;
+  status?: InputMaybe<StoryStatus>;
+  status_in?: InputMaybe<Array<InputMaybe<StoryStatus>>>;
+  status_not?: InputMaybe<StoryStatus>;
+  status_not_in?: InputMaybe<Array<InputMaybe<StoryStatus>>>;
   symbol?: InputMaybe<Scalars['String']['input']>;
   symbol_contains?: InputMaybe<Scalars['String']['input']>;
   symbol_ends_with?: InputMaybe<Scalars['String']['input']>;
@@ -1599,6 +1604,11 @@ export enum EntityType {
   Wormhole = 'WORMHOLE'
 }
 
+export enum StoryStatus {
+  Finalized = 'Finalized',
+  Pending = 'Pending'
+}
+
 export type UndiscoveredStarQueryVariables = Exact<{
   id: Scalars['BigInt']['input'];
 }>;
@@ -1840,7 +1850,7 @@ export type StoryQueryVariables = Exact<{
 }>;
 
 
-export type StoryQuery = { __typename?: 'Query', story?: { __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null } | null };
+export type StoryQuery = { __typename?: 'Query', story?: { __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, status?: StoryStatus | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null };
 
 export type StorysQueryVariables = Exact<{
   where?: InputMaybe<StoryFilter>;
@@ -1852,7 +1862,7 @@ export type StorysQueryVariables = Exact<{
 }>;
 
 
-export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', totalCount: number, items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', totalCount: number, items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, status?: StoryStatus | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 
 export const UndiscoveredStarDocument = gql`
@@ -2654,7 +2664,50 @@ export const StoryDocument = gql`
     coin
     image
     name
+    status
     symbol
+    entity {
+      id
+      x
+      y
+      quadrantX
+      quadrantY
+      radius
+      discoveredAt
+      name
+      type
+      entityType
+      module
+      moduleName
+    }
+    creatorPlayer {
+      address
+      anchoredToStarId
+      previousX
+      previousY
+      x
+      y
+      quadrantX
+      quadrantY
+      speed
+      arrivingAt
+      lastMovedAt
+      lastWormholeUsedAt
+      lastMoveTransactionHash
+      totalDistanceTraveled
+      holding
+      totalBurned
+      discoveredCount
+      lastLootedDay
+      lootCount
+      allTimeLootCount
+      lootStreak
+      fid
+      pfpUrl
+      username
+      ens
+      createdAt
+    }
   }
 }
     `;
@@ -2672,6 +2725,7 @@ export const StorysDocument = gql`
       id
       entityId
       creator
+      status
       entity {
         id
         x
