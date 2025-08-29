@@ -420,10 +420,7 @@ export type LootEvent = {
   id: Scalars['String']['output'];
   player?: Maybe<Scalars['String']['output']>;
   timestamp?: Maybe<Scalars['BigInt']['output']>;
-  token?: Maybe<Scalars['String']['output']>;
-  tokenDecimals?: Maybe<Scalars['Int']['output']>;
-  tokenName?: Maybe<Scalars['String']['output']>;
-  tokenSymbol?: Maybe<Scalars['String']['output']>;
+  token?: Maybe<LootTokenRange>;
   transactionHash?: Maybe<Scalars['String']['output']>;
 };
 
@@ -467,34 +464,6 @@ export type LootEventFilter = {
   timestamp_not?: InputMaybe<Scalars['BigInt']['input']>;
   timestamp_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
   token?: InputMaybe<Scalars['String']['input']>;
-  tokenDecimals?: InputMaybe<Scalars['Int']['input']>;
-  tokenDecimals_gt?: InputMaybe<Scalars['Int']['input']>;
-  tokenDecimals_gte?: InputMaybe<Scalars['Int']['input']>;
-  tokenDecimals_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  tokenDecimals_lt?: InputMaybe<Scalars['Int']['input']>;
-  tokenDecimals_lte?: InputMaybe<Scalars['Int']['input']>;
-  tokenDecimals_not?: InputMaybe<Scalars['Int']['input']>;
-  tokenDecimals_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  tokenName?: InputMaybe<Scalars['String']['input']>;
-  tokenName_contains?: InputMaybe<Scalars['String']['input']>;
-  tokenName_ends_with?: InputMaybe<Scalars['String']['input']>;
-  tokenName_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  tokenName_not?: InputMaybe<Scalars['String']['input']>;
-  tokenName_not_contains?: InputMaybe<Scalars['String']['input']>;
-  tokenName_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  tokenName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  tokenName_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  tokenName_starts_with?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol_contains?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol_ends_with?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  tokenSymbol_not?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol_not_contains?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  tokenSymbol_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  tokenSymbol_starts_with?: InputMaybe<Scalars['String']['input']>;
   token_contains?: InputMaybe<Scalars['String']['input']>;
   token_ends_with?: InputMaybe<Scalars['String']['input']>;
   token_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -607,6 +576,109 @@ export type LootTokenRangePage = {
 export type Meta = {
   __typename?: 'Meta';
   status?: Maybe<Scalars['JSON']['output']>;
+};
+
+export type Move = {
+  __typename?: 'Move';
+  arrivingAt?: Maybe<Scalars['BigInt']['output']>;
+  fromX?: Maybe<Scalars['BigInt']['output']>;
+  fromY?: Maybe<Scalars['BigInt']['output']>;
+  id: Scalars['String']['output'];
+  player?: Maybe<Scalars['String']['output']>;
+  timestamp?: Maybe<Scalars['BigInt']['output']>;
+  toX?: Maybe<Scalars['BigInt']['output']>;
+  toY?: Maybe<Scalars['BigInt']['output']>;
+  transactionHash?: Maybe<Scalars['String']['output']>;
+};
+
+export type MoveFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MoveFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MoveFilter>>>;
+  arrivingAt?: InputMaybe<Scalars['BigInt']['input']>;
+  arrivingAt_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  arrivingAt_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  arrivingAt_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  arrivingAt_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  arrivingAt_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  arrivingAt_not?: InputMaybe<Scalars['BigInt']['input']>;
+  arrivingAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  fromX?: InputMaybe<Scalars['BigInt']['input']>;
+  fromX_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  fromX_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  fromX_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  fromX_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  fromX_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  fromX_not?: InputMaybe<Scalars['BigInt']['input']>;
+  fromX_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  fromY?: InputMaybe<Scalars['BigInt']['input']>;
+  fromY_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  fromY_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  fromY_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  fromY_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  fromY_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  fromY_not?: InputMaybe<Scalars['BigInt']['input']>;
+  fromY_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  id_contains?: InputMaybe<Scalars['String']['input']>;
+  id_ends_with?: InputMaybe<Scalars['String']['input']>;
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  id_not?: InputMaybe<Scalars['String']['input']>;
+  id_not_contains?: InputMaybe<Scalars['String']['input']>;
+  id_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  id_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  id_starts_with?: InputMaybe<Scalars['String']['input']>;
+  player?: InputMaybe<Scalars['String']['input']>;
+  player_contains?: InputMaybe<Scalars['String']['input']>;
+  player_ends_with?: InputMaybe<Scalars['String']['input']>;
+  player_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_not?: InputMaybe<Scalars['String']['input']>;
+  player_not_contains?: InputMaybe<Scalars['String']['input']>;
+  player_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  player_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  player_starts_with?: InputMaybe<Scalars['String']['input']>;
+  timestamp?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  timestamp_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_not?: InputMaybe<Scalars['BigInt']['input']>;
+  timestamp_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  toX?: InputMaybe<Scalars['BigInt']['input']>;
+  toX_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  toX_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  toX_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  toX_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  toX_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  toX_not?: InputMaybe<Scalars['BigInt']['input']>;
+  toX_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  toY?: InputMaybe<Scalars['BigInt']['input']>;
+  toY_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  toY_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  toY_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  toY_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  toY_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  toY_not?: InputMaybe<Scalars['BigInt']['input']>;
+  toY_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  transactionHash?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_contains?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_ends_with?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  transactionHash_not?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_not_contains?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  transactionHash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  transactionHash_starts_with?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MovePage = {
+  __typename?: 'MovePage';
+  items: Array<Move>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
 };
 
 export type PageInfo = {
@@ -950,6 +1022,8 @@ export type Query = {
   lootEvents: LootEventPage;
   lootTokenRange?: Maybe<LootTokenRange>;
   lootTokenRanges: LootTokenRangePage;
+  move?: Maybe<Move>;
+  moves: MovePage;
   player?: Maybe<Player>;
   playerWeeklyLoot?: Maybe<PlayerWeeklyLoot>;
   playerWeeklyLoots: PlayerWeeklyLootPage;
@@ -1054,6 +1128,21 @@ export type QueryLootTokenRangesArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   orderDirection?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<LootTokenRangeFilter>;
+};
+
+
+export type QueryMoveArgs = {
+  id: Scalars['String']['input'];
+};
+
+
+export type QueryMovesArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<MoveFilter>;
 };
 
 
@@ -1756,7 +1845,7 @@ export type LootEventQueryVariables = Exact<{
 }>;
 
 
-export type LootEventQuery = { __typename?: 'Query', lootEvent?: { __typename?: 'LootEvent', id: string, player?: string | null, token?: string | null, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, amount?: any | null, timestamp?: any | null } | null };
+export type LootEventQuery = { __typename?: 'Query', lootEvent?: { __typename?: 'LootEvent', id: string, player?: string | null, amount?: any | null, timestamp?: any | null, transactionHash?: string | null, token?: { __typename?: 'LootTokenRange', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, enabled: boolean, min?: any | null, max?: any | null } | null } | null };
 
 export type LootEventsQueryVariables = Exact<{
   where?: InputMaybe<LootEventFilter>;
@@ -1768,7 +1857,7 @@ export type LootEventsQueryVariables = Exact<{
 }>;
 
 
-export type LootEventsQuery = { __typename?: 'Query', lootEvents: { __typename?: 'LootEventPage', totalCount: number, items: Array<{ __typename?: 'LootEvent', id: string, player?: string | null, token?: string | null, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, amount?: any | null, timestamp?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type LootEventsQuery = { __typename?: 'Query', lootEvents: { __typename?: 'LootEventPage', totalCount: number, items: Array<{ __typename?: 'LootEvent', id: string, player?: string | null, amount?: any | null, timestamp?: any | null, transactionHash?: string | null, token?: { __typename?: 'LootTokenRange', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, enabled: boolean, min?: any | null, max?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type LootTokenRangeQueryVariables = Exact<{
   token: Scalars['String']['input'];
@@ -1871,7 +1960,26 @@ export type StorysQueryVariables = Exact<{
 }>;
 
 
-export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', totalCount: number, items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, status?: StoryStatus | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', totalCount: number, items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, status?: StoryStatus | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null, discoveredBy?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+
+export type MoveQueryVariables = Exact<{
+  id: Scalars['String']['input'];
+}>;
+
+
+export type MoveQuery = { __typename?: 'Query', move?: { __typename?: 'Move', id: string, player?: string | null, fromX?: any | null, fromY?: any | null, toX?: any | null, toY?: any | null, arrivingAt?: any | null, timestamp?: any | null, transactionHash?: string | null } | null };
+
+export type MovesQueryVariables = Exact<{
+  where?: InputMaybe<MoveFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type MovesQuery = { __typename?: 'Query', moves: { __typename?: 'MovePage', totalCount: number, items: Array<{ __typename?: 'Move', id: string, player?: string | null, fromX?: any | null, fromY?: any | null, toX?: any | null, toY?: any | null, arrivingAt?: any | null, timestamp?: any | null, transactionHash?: string | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 
 export const UndiscoveredStarDocument = gql`
@@ -2425,12 +2533,18 @@ export const LootEventDocument = gql`
   lootEvent(id: $id) {
     id
     player
-    token
-    tokenName
-    tokenSymbol
-    tokenDecimals
     amount
     timestamp
+    transactionHash
+    token {
+      token
+      tokenName
+      tokenSymbol
+      tokenDecimals
+      enabled
+      min
+      max
+    }
   }
 }
     `;
@@ -2447,12 +2561,18 @@ export const LootEventsDocument = gql`
     items {
       id
       player
-      token
-      tokenName
-      tokenSymbol
-      tokenDecimals
       amount
       timestamp
+      transactionHash
+      token {
+        token
+        tokenName
+        tokenSymbol
+        tokenDecimals
+        enabled
+        min
+        max
+      }
     }
     pageInfo {
       hasNextPage
@@ -2756,6 +2876,34 @@ export const StorysDocument = gql`
         entityType
         module
         moduleName
+        discoveredBy {
+          address
+          previousX
+          previousY
+          x
+          y
+          quadrantX
+          quadrantY
+          speed
+          arrivingAt
+          lastMovedAt
+          lastWormholeUsedAt
+          totalMoves
+          lastMoveTransactionHash
+          totalDistanceTraveled
+          holding
+          totalBurned
+          discoveredCount
+          lastLootedDay
+          lootCount
+          allTimeLootCount
+          lootStreak
+          fid
+          pfpUrl
+          username
+          ens
+          createdAt
+        }
       }
       creatorPlayer {
         address
@@ -2793,6 +2941,52 @@ export const StorysDocument = gql`
       image
       name
       symbol
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}
+    `;
+export const MoveDocument = gql`
+    query move($id: String!) {
+  move(id: $id) {
+    id
+    player
+    fromX
+    fromY
+    toX
+    toY
+    arrivingAt
+    timestamp
+    transactionHash
+  }
+}
+    `;
+export const MovesDocument = gql`
+    query moves($where: MoveFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  moves(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    items {
+      id
+      player
+      fromX
+      fromY
+      toX
+      toY
+      arrivingAt
+      timestamp
+      transactionHash
     }
     pageInfo {
       hasNextPage
@@ -2883,6 +3077,12 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     storys(variables?: StorysQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<StorysQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<StorysQuery>(StorysDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'storys', 'query', variables);
+    },
+    move(variables: MoveQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MoveQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<MoveQuery>(MoveDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'move', 'query', variables);
+    },
+    moves(variables?: MovesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MovesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<MovesQuery>(MovesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'moves', 'query', variables);
     }
   };
 }
