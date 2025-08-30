@@ -1378,6 +1378,7 @@ export type TokenLootStat = {
   __typename?: 'TokenLootStat';
   timesLooted: Scalars['BigInt']['output'];
   token: Scalars['String']['output'];
+  tokenObject?: Maybe<LootTokenRange>;
   totalAmountLooted: Scalars['BigInt']['output'];
 };
 
@@ -1883,7 +1884,7 @@ export type TokenLootStatQueryVariables = Exact<{
 }>;
 
 
-export type TokenLootStatQuery = { __typename?: 'Query', tokenLootStat?: { __typename?: 'TokenLootStat', token: string, totalAmountLooted: any, timesLooted: any } | null };
+export type TokenLootStatQuery = { __typename?: 'Query', tokenLootStat?: { __typename?: 'TokenLootStat', token: string, totalAmountLooted: any, timesLooted: any, tokenObject?: { __typename?: 'LootTokenRange', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, enabled: boolean, min?: any | null, max?: any | null } | null } | null };
 
 export type TokenLootStatsQueryVariables = Exact<{
   where?: InputMaybe<TokenLootStatFilter>;
@@ -1895,7 +1896,7 @@ export type TokenLootStatsQueryVariables = Exact<{
 }>;
 
 
-export type TokenLootStatsQuery = { __typename?: 'Query', tokenLootStats: { __typename?: 'TokenLootStatPage', totalCount: number, items: Array<{ __typename?: 'TokenLootStat', token: string, totalAmountLooted: any, timesLooted: any }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type TokenLootStatsQuery = { __typename?: 'Query', tokenLootStats: { __typename?: 'TokenLootStatPage', totalCount: number, items: Array<{ __typename?: 'TokenLootStat', token: string, totalAmountLooted: any, timesLooted: any, tokenObject?: { __typename?: 'LootTokenRange', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, enabled: boolean, min?: any | null, max?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type DropSettingQueryVariables = Exact<{
   id: Scalars['String']['input'];
@@ -2632,6 +2633,15 @@ export const TokenLootStatDocument = gql`
     token
     totalAmountLooted
     timesLooted
+    tokenObject {
+      token
+      tokenName
+      tokenSymbol
+      tokenDecimals
+      enabled
+      min
+      max
+    }
   }
 }
     `;
@@ -2649,6 +2659,15 @@ export const TokenLootStatsDocument = gql`
       token
       totalAmountLooted
       timesLooted
+      tokenObject {
+        token
+        tokenName
+        tokenSymbol
+        tokenDecimals
+        enabled
+        min
+        max
+      }
     }
     pageInfo {
       hasNextPage
