@@ -1,3 +1,5 @@
+![Astroblock SDK Banner](./banner.jpg)
+
 # Astroblock SDK
 
 A TypeScript SDK for querying Astroblock game data via GraphQL.
