@@ -713,6 +713,7 @@ export type Player = {
   previousY?: Maybe<Scalars['BigInt']['output']>;
   quadrantX?: Maybe<Scalars['Int']['output']>;
   quadrantY?: Maybe<Scalars['Int']['output']>;
+  ships?: Maybe<PlayerShipsPage>;
   speed?: Maybe<Scalars['BigInt']['output']>;
   totalBurned: Scalars['BigInt']['output'];
   totalDistanceTraveled: Scalars['BigInt']['output'];
@@ -730,6 +731,16 @@ export type PlayerDropsArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   orderDirection?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<DropFilter>;
+};
+
+
+export type PlayerShipsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<PlayerShipsFilter>;
 };
 
 export type PlayerFilter = {
@@ -962,6 +973,52 @@ export type PlayerPage = {
   totalCount: Scalars['Int']['output'];
 };
 
+export type PlayerShips = {
+  __typename?: 'PlayerShips';
+  amount: Scalars['BigInt']['output'];
+  player?: Maybe<Player>;
+  ship?: Maybe<Ship>;
+  tokenId: Scalars['BigInt']['output'];
+};
+
+export type PlayerShipsFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PlayerShipsFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PlayerShipsFilter>>>;
+  amount?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  amount_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_not?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  player?: InputMaybe<Scalars['String']['input']>;
+  player_contains?: InputMaybe<Scalars['String']['input']>;
+  player_ends_with?: InputMaybe<Scalars['String']['input']>;
+  player_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_not?: InputMaybe<Scalars['String']['input']>;
+  player_not_contains?: InputMaybe<Scalars['String']['input']>;
+  player_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  player_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  player_starts_with?: InputMaybe<Scalars['String']['input']>;
+  tokenId?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  tokenId_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_not?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+};
+
+export type PlayerShipsPage = {
+  __typename?: 'PlayerShipsPage';
+  items: Array<PlayerShips>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
 export type PlayerWeeklyLoot = {
   __typename?: 'PlayerWeeklyLoot';
   lootCount: Scalars['BigInt']['output'];
@@ -1025,9 +1082,13 @@ export type Query = {
   move?: Maybe<Move>;
   moves: MovePage;
   player?: Maybe<Player>;
+  playerShips?: Maybe<PlayerShips>;
+  playerShipss: PlayerShipsPage;
   playerWeeklyLoot?: Maybe<PlayerWeeklyLoot>;
   playerWeeklyLoots: PlayerWeeklyLootPage;
   players: PlayerPage;
+  ship?: Maybe<Ship>;
+  ships: ShipPage;
   story?: Maybe<Story>;
   storys: StoryPage;
   tokenLootStat?: Maybe<TokenLootStat>;
@@ -1151,6 +1212,22 @@ export type QueryPlayerArgs = {
 };
 
 
+export type QueryPlayerShipsArgs = {
+  player: Scalars['String']['input'];
+  tokenId: Scalars['BigInt']['input'];
+};
+
+
+export type QueryPlayerShipssArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<PlayerShipsFilter>;
+};
+
+
 export type QueryPlayerWeeklyLootArgs = {
   player: Scalars['String']['input'];
   week: Scalars['Float']['input'];
@@ -1174,6 +1251,21 @@ export type QueryPlayersArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   orderDirection?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<PlayerFilter>;
+};
+
+
+export type QueryShipArgs = {
+  tokenId: Scalars['BigInt']['input'];
+};
+
+
+export type QueryShipsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<ShipFilter>;
 };
 
 
@@ -1234,6 +1326,75 @@ export type QueryWorldSettingssArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   orderDirection?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<WorldSettingsFilter>;
+};
+
+export type Ship = {
+  __typename?: 'Ship';
+  description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  shipImage?: Maybe<Scalars['String']['output']>;
+  tokenId: Scalars['BigInt']['output'];
+};
+
+export type ShipFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ShipFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ShipFilter>>>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_ends_with?: InputMaybe<Scalars['String']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  description_starts_with?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  image_contains?: InputMaybe<Scalars['String']['input']>;
+  image_ends_with?: InputMaybe<Scalars['String']['input']>;
+  image_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_not?: InputMaybe<Scalars['String']['input']>;
+  image_not_contains?: InputMaybe<Scalars['String']['input']>;
+  image_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  image_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  image_starts_with?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_ends_with?: InputMaybe<Scalars['String']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  name_starts_with?: InputMaybe<Scalars['String']['input']>;
+  shipImage?: InputMaybe<Scalars['String']['input']>;
+  shipImage_contains?: InputMaybe<Scalars['String']['input']>;
+  shipImage_ends_with?: InputMaybe<Scalars['String']['input']>;
+  shipImage_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  shipImage_not?: InputMaybe<Scalars['String']['input']>;
+  shipImage_not_contains?: InputMaybe<Scalars['String']['input']>;
+  shipImage_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  shipImage_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  shipImage_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  shipImage_starts_with?: InputMaybe<Scalars['String']['input']>;
+  tokenId?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  tokenId_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_not?: InputMaybe<Scalars['BigInt']['input']>;
+  tokenId_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+};
+
+export type ShipPage = {
+  __typename?: 'ShipPage';
+  items: Array<Ship>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
 };
 
 export type Story = {
@@ -1551,6 +1712,8 @@ export type WorldSettings = {
   id: Scalars['String']['output'];
   speedBurningFactor?: Maybe<Scalars['BigInt']['output']>;
   speedHoldingFactor?: Maybe<Scalars['BigInt']['output']>;
+  startingPositionX?: Maybe<Scalars['BigInt']['output']>;
+  startingPositionY?: Maybe<Scalars['BigInt']['output']>;
   width?: Maybe<Scalars['BigInt']['output']>;
   wormholeCooldown?: Maybe<Scalars['BigInt']['output']>;
   wormholeSpeedMultiplier?: Maybe<Scalars['BigInt']['output']>;
@@ -1659,6 +1822,22 @@ export type WorldSettingsFilter = {
   speedHoldingFactor_lte?: InputMaybe<Scalars['BigInt']['input']>;
   speedHoldingFactor_not?: InputMaybe<Scalars['BigInt']['input']>;
   speedHoldingFactor_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  startingPositionX?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionX_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionX_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionX_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  startingPositionX_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionX_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionX_not?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionX_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  startingPositionY?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionY_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionY_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionY_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  startingPositionY_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionY_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionY_not?: InputMaybe<Scalars['BigInt']['input']>;
+  startingPositionY_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
   width?: InputMaybe<Scalars['BigInt']['input']>;
   width_gt?: InputMaybe<Scalars['BigInt']['input']>;
   width_gte?: InputMaybe<Scalars['BigInt']['input']>;
@@ -1796,7 +1975,7 @@ export type WorldSettingsQueryVariables = Exact<{
 }>;
 
 
-export type WorldSettingsQuery = { __typename?: 'Query', worldSettings?: { __typename?: 'WorldSettings', id: string, width?: any | null, height?: any | null, baseStarMetadataURI?: string | null, fuel?: string | null, fuelSymbol?: string | null, fuelName?: string | null, fuelDecimals?: number | null, burnAddress?: string | null, baseSpeed?: any | null, speedBurningFactor?: any | null, speedHoldingFactor?: any | null, wormholeSpeedMultiplier?: any | null, wormholeCooldown?: any | null } | null };
+export type WorldSettingsQuery = { __typename?: 'Query', worldSettings?: { __typename?: 'WorldSettings', id: string, width?: any | null, height?: any | null, baseStarMetadataURI?: string | null, fuel?: string | null, fuelSymbol?: string | null, fuelName?: string | null, fuelDecimals?: number | null, burnAddress?: string | null, baseSpeed?: any | null, speedBurningFactor?: any | null, speedHoldingFactor?: any | null, wormholeSpeedMultiplier?: any | null, wormholeCooldown?: any | null, startingPositionX?: any | null, startingPositionY?: any | null } | null };
 
 export type WorldSettingssQueryVariables = Exact<{
   where?: InputMaybe<WorldSettingsFilter>;
@@ -1808,7 +1987,7 @@ export type WorldSettingssQueryVariables = Exact<{
 }>;
 
 
-export type WorldSettingssQuery = { __typename?: 'Query', worldSettingss: { __typename?: 'WorldSettingsPage', totalCount: number, items: Array<{ __typename?: 'WorldSettings', id: string, width?: any | null, height?: any | null, baseStarMetadataURI?: string | null, fuel?: string | null, fuelSymbol?: string | null, fuelName?: string | null, fuelDecimals?: number | null, burnAddress?: string | null, baseSpeed?: any | null, speedBurningFactor?: any | null, speedHoldingFactor?: any | null, wormholeSpeedMultiplier?: any | null, wormholeCooldown?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type WorldSettingssQuery = { __typename?: 'Query', worldSettingss: { __typename?: 'WorldSettingsPage', totalCount: number, items: Array<{ __typename?: 'WorldSettings', id: string, width?: any | null, height?: any | null, baseStarMetadataURI?: string | null, fuel?: string | null, fuelSymbol?: string | null, fuelName?: string | null, fuelDecimals?: number | null, burnAddress?: string | null, baseSpeed?: any | null, speedBurningFactor?: any | null, speedHoldingFactor?: any | null, wormholeSpeedMultiplier?: any | null, wormholeCooldown?: any | null, startingPositionX?: any | null, startingPositionY?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type EntityQueryVariables = Exact<{
   id: Scalars['BigInt']['input'];
@@ -1981,6 +2160,45 @@ export type MovesQueryVariables = Exact<{
 
 
 export type MovesQuery = { __typename?: 'Query', moves: { __typename?: 'MovePage', totalCount: number, items: Array<{ __typename?: 'Move', id: string, player?: string | null, fromX?: any | null, fromY?: any | null, toX?: any | null, toY?: any | null, arrivingAt?: any | null, timestamp?: any | null, transactionHash?: string | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+
+export type PlayerShipsQueryVariables = Exact<{
+  player: Scalars['String']['input'];
+  tokenId: Scalars['BigInt']['input'];
+}>;
+
+
+export type PlayerShipsQuery = { __typename?: 'Query', playerShips?: { __typename?: 'PlayerShips', tokenId: any, amount: any, player?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalMoves: number, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, ship?: { __typename?: 'Ship', tokenId: any, name?: string | null, image?: string | null, description?: string | null, shipImage?: string | null } | null } | null };
+
+export type PlayerShipssQueryVariables = Exact<{
+  where?: InputMaybe<PlayerShipsFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type PlayerShipssQuery = { __typename?: 'Query', playerShipss: { __typename?: 'PlayerShipsPage', totalCount: number, items: Array<{ __typename?: 'PlayerShips', tokenId: any, amount: any }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+
+export type ShipQueryVariables = Exact<{
+  tokenId: Scalars['BigInt']['input'];
+}>;
+
+
+export type ShipQuery = { __typename?: 'Query', ship?: { __typename?: 'Ship', tokenId: any, name?: string | null, image?: string | null, description?: string | null, shipImage?: string | null } | null };
+
+export type ShipsQueryVariables = Exact<{
+  where?: InputMaybe<ShipFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type ShipsQuery = { __typename?: 'Query', ships: { __typename?: 'ShipPage', totalCount: number, items: Array<{ __typename?: 'Ship', tokenId: any, name?: string | null, image?: string | null, description?: string | null, shipImage?: string | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 
 export const UndiscoveredStarDocument = gql`
@@ -2292,6 +2510,8 @@ export const WorldSettingsDocument = gql`
     speedHoldingFactor
     wormholeSpeedMultiplier
     wormholeCooldown
+    startingPositionX
+    startingPositionY
   }
 }
     `;
@@ -2320,6 +2540,8 @@ export const WorldSettingssDocument = gql`
       speedHoldingFactor
       wormholeSpeedMultiplier
       wormholeCooldown
+      startingPositionX
+      startingPositionY
     }
     pageInfo {
       hasNextPage
@@ -3017,6 +3239,112 @@ export const MovesDocument = gql`
   }
 }
     `;
+export const PlayerShipsDocument = gql`
+    query playerShips($player: String!, $tokenId: BigInt!) {
+  playerShips(player: $player, tokenId: $tokenId) {
+    player {
+      address
+      anchoredToStarId
+      previousX
+      previousY
+      x
+      y
+      quadrantX
+      quadrantY
+      speed
+      arrivingAt
+      lastMovedAt
+      lastWormholeUsedAt
+      lastMoveTransactionHash
+      totalMoves
+      totalDistanceTraveled
+      holding
+      totalBurned
+      discoveredCount
+      lastLootedDay
+      lootCount
+      allTimeLootCount
+      lootStreak
+      fid
+      pfpUrl
+      username
+      ens
+      createdAt
+    }
+    tokenId
+    amount
+    ship {
+      tokenId
+      name
+      image
+      description
+      shipImage
+    }
+  }
+}
+    `;
+export const PlayerShipssDocument = gql`
+    query playerShipss($where: PlayerShipsFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  playerShipss(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    items {
+      tokenId
+      amount
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}
+    `;
+export const ShipDocument = gql`
+    query ship($tokenId: BigInt!) {
+  ship(tokenId: $tokenId) {
+    tokenId
+    name
+    image
+    description
+    shipImage
+  }
+}
+    `;
+export const ShipsDocument = gql`
+    query ships($where: ShipFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  ships(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    items {
+      tokenId
+      name
+      image
+      description
+      shipImage
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
 
@@ -3102,6 +3430,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     moves(variables?: MovesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MovesQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<MovesQuery>(MovesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'moves', 'query', variables);
+    },
+    playerShips(variables: PlayerShipsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayerShipsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PlayerShipsQuery>(PlayerShipsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'playerShips', 'query', variables);
+    },
+    playerShipss(variables?: PlayerShipssQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayerShipssQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PlayerShipssQuery>(PlayerShipssDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'playerShipss', 'query', variables);
+    },
+    ship(variables: ShipQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ShipQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<ShipQuery>(ShipDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'ship', 'query', variables);
+    },
+    ships(variables?: ShipsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ShipsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<ShipsQuery>(ShipsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'ships', 'query', variables);
     }
   };
 }
