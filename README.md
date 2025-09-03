@@ -2,7 +2,7 @@
 
 # Astroblock SDK
 
-A TypeScript SDK for querying Astroblock game data via GraphQL.
+A TypeScript SDK for querying Astroblock game data via GraphQL
 
 ## Installation
 
