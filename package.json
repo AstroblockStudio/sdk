@@ -1,6 +1,6 @@
 {
   "name": "astroblock-sdk",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "A TypeScript SDK for querying Astroblock game data via GraphQL",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
