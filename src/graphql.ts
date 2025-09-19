@@ -719,6 +719,7 @@ export type Player = {
   drops?: Maybe<DropPage>;
   ens?: Maybe<Scalars['JSON']['output']>;
   fid?: Maybe<Scalars['String']['output']>;
+  fromClientFid?: Maybe<Scalars['String']['output']>;
   holding: Scalars['BigInt']['output'];
   lastLootedDay?: Maybe<Scalars['BigInt']['output']>;
   lastMoveTransactionHash?: Maybe<Scalars['String']['output']>;
@@ -825,6 +826,16 @@ export type PlayerFilter = {
   fid_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   fid_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   fid_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid_contains?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fromClientFid_not?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid_not_contains?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fromClientFid_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fromClientFid_starts_with?: InputMaybe<Scalars['String']['input']>;
   holding?: InputMaybe<Scalars['BigInt']['input']>;
   holding_gt?: InputMaybe<Scalars['BigInt']['input']>;
   holding_gte?: InputMaybe<Scalars['BigInt']['input']>;
@@ -1963,7 +1974,7 @@ export type PlayerQueryVariables = Exact<{
 }>;
 
 
-export type PlayerQuery = { __typename?: 'Query', player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, drops?: { __typename?: 'DropPage', totalCount: number } | null, anchoredTo?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null } | null } | null };
+export type PlayerQuery = { __typename?: 'Query', player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, drops?: { __typename?: 'DropPage', totalCount: number } | null, anchoredTo?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null } | null } | null };
 
 export type PlayersQueryVariables = Exact<{
   where?: InputMaybe<PlayerFilter>;
@@ -1975,7 +1986,7 @@ export type PlayersQueryVariables = Exact<{
 }>;
 
 
-export type PlayersQuery = { __typename?: 'Query', players: { __typename?: 'PlayerPage', totalCount: number, items: Array<{ __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, anchoredTo?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type PlayersQuery = { __typename?: 'Query', players: { __typename?: 'PlayerPage', totalCount: number, items: Array<{ __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, anchoredTo?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type PlayerWeeklyLootQueryVariables = Exact<{
   player: Scalars['String']['input'];
@@ -1983,7 +1994,7 @@ export type PlayerWeeklyLootQueryVariables = Exact<{
 }>;
 
 
-export type PlayerWeeklyLootQuery = { __typename?: 'Query', playerWeeklyLoot?: { __typename?: 'PlayerWeeklyLoot', week: number, lootCount: any, player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null };
+export type PlayerWeeklyLootQuery = { __typename?: 'Query', playerWeeklyLoot?: { __typename?: 'PlayerWeeklyLoot', week: number, lootCount: any, player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null };
 
 export type PlayerWeeklyLootsQueryVariables = Exact<{
   where?: InputMaybe<PlayerWeeklyLootFilter>;
@@ -2027,7 +2038,7 @@ export type EntityQueryVariables = Exact<{
 }>;
 
 
-export type EntityQuery = { __typename?: 'Query', entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null, discoveredAt?: any | null, name?: string | null, type?: any | null, discoveredBy?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, playersAnchored?: { __typename?: 'PlayerPage', totalCount: number, items: Array<{ __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } | null } | null };
+export type EntityQuery = { __typename?: 'Query', entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null, discoveredAt?: any | null, name?: string | null, type?: any | null, discoveredBy?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, playersAnchored?: { __typename?: 'PlayerPage', totalCount: number, items: Array<{ __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } | null } | null };
 
 export type EntitysQueryVariables = Exact<{
   where?: InputMaybe<EntityFilter>;
@@ -2045,7 +2056,7 @@ export type EntitysQueryVariables = Exact<{
 }>;
 
 
-export type EntitysQuery = { __typename?: 'Query', entitys: { __typename?: 'EntityPage', totalCount: number, items: Array<{ __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, module?: string | null, moduleName?: string | null, entityType?: EntityType | null, discoveredBy?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, playersAnchored?: { __typename?: 'PlayerPage', totalCount: number, items: Array<{ __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type EntitysQuery = { __typename?: 'Query', entitys: { __typename?: 'EntityPage', totalCount: number, items: Array<{ __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, module?: string | null, moduleName?: string | null, entityType?: EntityType | null, discoveredBy?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, playersAnchored?: { __typename?: 'PlayerPage', totalCount: number, items: Array<{ __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type LootEventQueryVariables = Exact<{
   id: Scalars['String']['input'];
@@ -2136,7 +2147,7 @@ export type DropQueryVariables = Exact<{
 }>;
 
 
-export type DropQuery = { __typename?: 'Query', drop?: { __typename?: 'Drop', data?: any | null, dropId: string, decision: Decision, timestamp: any, transactionHash: string, player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, dropSetting?: { __typename?: 'DropSetting', id: string, token?: string | null, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, dropAmount?: any | null, cargoOwner?: string | null, timeOfArrival?: any | null } | null } | null };
+export type DropQuery = { __typename?: 'Query', drop?: { __typename?: 'Drop', data?: any | null, dropId: string, decision: Decision, timestamp: any, transactionHash: string, player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, dropSetting?: { __typename?: 'DropSetting', id: string, token?: string | null, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null, dropAmount?: any | null, cargoOwner?: string | null, timeOfArrival?: any | null } | null } | null };
 
 export type DropsQueryVariables = Exact<{
   where?: InputMaybe<DropFilter>;
@@ -2155,7 +2166,7 @@ export type StoryQueryVariables = Exact<{
 }>;
 
 
-export type StoryQuery = { __typename?: 'Query', story?: { __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, status?: StoryStatus | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null };
+export type StoryQuery = { __typename?: 'Query', story?: { __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, status?: StoryStatus | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null };
 
 export type StorysQueryVariables = Exact<{
   where?: InputMaybe<StoryFilter>;
@@ -2167,7 +2178,7 @@ export type StorysQueryVariables = Exact<{
 }>;
 
 
-export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', totalCount: number, items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, status?: StoryStatus | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null, discoveredBy?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', totalCount: number, items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, status?: StoryStatus | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null, discoveredBy?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type MoveQueryVariables = Exact<{
   id: Scalars['String']['input'];
@@ -2194,7 +2205,7 @@ export type PlayerShipsQueryVariables = Exact<{
 }>;
 
 
-export type PlayerShipsQuery = { __typename?: 'Query', playerShips?: { __typename?: 'PlayerShips', tokenId: any, amount: any, player?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalMoves: number, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, ship?: { __typename?: 'Ship', tokenId: any, name?: string | null, image?: string | null, description?: string | null, shipImage?: string | null } | null } | null };
+export type PlayerShipsQuery = { __typename?: 'Query', playerShips?: { __typename?: 'PlayerShips', tokenId: any, amount: any, player?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalMoves: number, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null } | null, ship?: { __typename?: 'Ship', tokenId: any, name?: string | null, image?: string | null, description?: string | null, shipImage?: string | null } | null } | null };
 
 export type PlayerShipssQueryVariables = Exact<{
   where?: InputMaybe<PlayerShipsFilter>;
@@ -2348,6 +2359,7 @@ export const PlayerDocument = gql`
     allTimeLootCount
     lootStreak
     fid
+    fromClientFid
     pfpUrl
     username
     ens
@@ -2410,6 +2422,7 @@ export const PlayersDocument = gql`
       allTimeLootCount
       lootStreak
       fid
+      fromClientFid
       pfpUrl
       username
       ens
@@ -2462,6 +2475,7 @@ export const PlayerWeeklyLootDocument = gql`
       allTimeLootCount
       lootStreak
       fid
+      fromClientFid
       pfpUrl
       username
       ens
@@ -2620,6 +2634,7 @@ export const EntityDocument = gql`
       allTimeLootCount
       lootStreak
       fid
+      fromClientFid
       pfpUrl
       username
       ens
@@ -2661,6 +2676,7 @@ export const EntityDocument = gql`
         allTimeLootCount
         lootStreak
         fid
+        fromClientFid
         pfpUrl
         username
         ens
@@ -2724,6 +2740,7 @@ export const EntitysDocument = gql`
         allTimeLootCount
         lootStreak
         fid
+        fromClientFid
         pfpUrl
         username
         ens
@@ -2762,6 +2779,7 @@ export const EntitysDocument = gql`
           allTimeLootCount
           lootStreak
           fid
+          fromClientFid
           pfpUrl
           username
           ens
@@ -3016,6 +3034,7 @@ export const DropDocument = gql`
       allTimeLootCount
       lootStreak
       fid
+      fromClientFid
       pfpUrl
       username
       ens
@@ -3118,6 +3137,7 @@ export const StoryDocument = gql`
       allTimeLootCount
       lootStreak
       fid
+      fromClientFid
       pfpUrl
       username
       ens
@@ -3178,6 +3198,7 @@ export const StorysDocument = gql`
           allTimeLootCount
           lootStreak
           fid
+          fromClientFid
           pfpUrl
           username
           ens
@@ -3207,6 +3228,7 @@ export const StorysDocument = gql`
         allTimeLootCount
         lootStreak
         fid
+        fromClientFid
         pfpUrl
         username
         ens
@@ -3304,6 +3326,7 @@ export const PlayerShipsDocument = gql`
       allTimeLootCount
       lootStreak
       fid
+      fromClientFid
       pfpUrl
       username
       ens
