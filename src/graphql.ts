@@ -19,6 +19,99 @@ export type Scalars = {
   JSON: { input: any; output: any; }
 };
 
+export type CachedUsers = {
+  __typename?: 'CachedUsers';
+  address: Scalars['String']['output'];
+  clientFid?: Maybe<Scalars['String']['output']>;
+  ens?: Maybe<Scalars['String']['output']>;
+  ensAvatar?: Maybe<Scalars['String']['output']>;
+  farcasterUsername?: Maybe<Scalars['String']['output']>;
+  fid?: Maybe<Scalars['String']['output']>;
+  profilePicture?: Maybe<Scalars['String']['output']>;
+};
+
+export type CachedUsersFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CachedUsersFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CachedUsersFilter>>>;
+  address?: InputMaybe<Scalars['String']['input']>;
+  address_contains?: InputMaybe<Scalars['String']['input']>;
+  address_ends_with?: InputMaybe<Scalars['String']['input']>;
+  address_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  address_not?: InputMaybe<Scalars['String']['input']>;
+  address_not_contains?: InputMaybe<Scalars['String']['input']>;
+  address_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  address_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  address_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  address_starts_with?: InputMaybe<Scalars['String']['input']>;
+  clientFid?: InputMaybe<Scalars['String']['input']>;
+  clientFid_contains?: InputMaybe<Scalars['String']['input']>;
+  clientFid_ends_with?: InputMaybe<Scalars['String']['input']>;
+  clientFid_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  clientFid_not?: InputMaybe<Scalars['String']['input']>;
+  clientFid_not_contains?: InputMaybe<Scalars['String']['input']>;
+  clientFid_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  clientFid_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  clientFid_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  clientFid_starts_with?: InputMaybe<Scalars['String']['input']>;
+  ens?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar_contains?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar_ends_with?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ensAvatar_not?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ensAvatar_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  ensAvatar_starts_with?: InputMaybe<Scalars['String']['input']>;
+  ens_contains?: InputMaybe<Scalars['String']['input']>;
+  ens_ends_with?: InputMaybe<Scalars['String']['input']>;
+  ens_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ens_not?: InputMaybe<Scalars['String']['input']>;
+  ens_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ens_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  ens_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ens_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  ens_starts_with?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername_contains?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername_ends_with?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  farcasterUsername_not?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername_not_contains?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  farcasterUsername_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  farcasterUsername_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fid?: InputMaybe<Scalars['String']['input']>;
+  fid_contains?: InputMaybe<Scalars['String']['input']>;
+  fid_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fid_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fid_not?: InputMaybe<Scalars['String']['input']>;
+  fid_not_contains?: InputMaybe<Scalars['String']['input']>;
+  fid_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fid_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fid_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fid_starts_with?: InputMaybe<Scalars['String']['input']>;
+  profilePicture?: InputMaybe<Scalars['String']['input']>;
+  profilePicture_contains?: InputMaybe<Scalars['String']['input']>;
+  profilePicture_ends_with?: InputMaybe<Scalars['String']['input']>;
+  profilePicture_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  profilePicture_not?: InputMaybe<Scalars['String']['input']>;
+  profilePicture_not_contains?: InputMaybe<Scalars['String']['input']>;
+  profilePicture_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  profilePicture_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  profilePicture_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  profilePicture_starts_with?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CachedUsersPage = {
+  __typename?: 'CachedUsersPage';
+  items: Array<CachedUsers>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
 export type Drop = {
   __typename?: 'Drop';
   data?: Maybe<Scalars['JSON']['output']>;
@@ -605,109 +698,6 @@ export type Meta = {
   status?: Maybe<Scalars['JSON']['output']>;
 };
 
-export type Move = {
-  __typename?: 'Move';
-  arrivingAt?: Maybe<Scalars['BigInt']['output']>;
-  fromX?: Maybe<Scalars['BigInt']['output']>;
-  fromY?: Maybe<Scalars['BigInt']['output']>;
-  id: Scalars['String']['output'];
-  player?: Maybe<Scalars['String']['output']>;
-  timestamp?: Maybe<Scalars['BigInt']['output']>;
-  toX?: Maybe<Scalars['BigInt']['output']>;
-  toY?: Maybe<Scalars['BigInt']['output']>;
-  transactionHash?: Maybe<Scalars['String']['output']>;
-};
-
-export type MoveFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MoveFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<MoveFilter>>>;
-  arrivingAt?: InputMaybe<Scalars['BigInt']['input']>;
-  arrivingAt_gt?: InputMaybe<Scalars['BigInt']['input']>;
-  arrivingAt_gte?: InputMaybe<Scalars['BigInt']['input']>;
-  arrivingAt_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  arrivingAt_lt?: InputMaybe<Scalars['BigInt']['input']>;
-  arrivingAt_lte?: InputMaybe<Scalars['BigInt']['input']>;
-  arrivingAt_not?: InputMaybe<Scalars['BigInt']['input']>;
-  arrivingAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  fromX?: InputMaybe<Scalars['BigInt']['input']>;
-  fromX_gt?: InputMaybe<Scalars['BigInt']['input']>;
-  fromX_gte?: InputMaybe<Scalars['BigInt']['input']>;
-  fromX_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  fromX_lt?: InputMaybe<Scalars['BigInt']['input']>;
-  fromX_lte?: InputMaybe<Scalars['BigInt']['input']>;
-  fromX_not?: InputMaybe<Scalars['BigInt']['input']>;
-  fromX_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  fromY?: InputMaybe<Scalars['BigInt']['input']>;
-  fromY_gt?: InputMaybe<Scalars['BigInt']['input']>;
-  fromY_gte?: InputMaybe<Scalars['BigInt']['input']>;
-  fromY_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  fromY_lt?: InputMaybe<Scalars['BigInt']['input']>;
-  fromY_lte?: InputMaybe<Scalars['BigInt']['input']>;
-  fromY_not?: InputMaybe<Scalars['BigInt']['input']>;
-  fromY_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  id?: InputMaybe<Scalars['String']['input']>;
-  id_contains?: InputMaybe<Scalars['String']['input']>;
-  id_ends_with?: InputMaybe<Scalars['String']['input']>;
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  id_not?: InputMaybe<Scalars['String']['input']>;
-  id_not_contains?: InputMaybe<Scalars['String']['input']>;
-  id_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  id_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  id_starts_with?: InputMaybe<Scalars['String']['input']>;
-  player?: InputMaybe<Scalars['String']['input']>;
-  player_contains?: InputMaybe<Scalars['String']['input']>;
-  player_ends_with?: InputMaybe<Scalars['String']['input']>;
-  player_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  player_not?: InputMaybe<Scalars['String']['input']>;
-  player_not_contains?: InputMaybe<Scalars['String']['input']>;
-  player_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  player_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  player_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  player_starts_with?: InputMaybe<Scalars['String']['input']>;
-  timestamp?: InputMaybe<Scalars['BigInt']['input']>;
-  timestamp_gt?: InputMaybe<Scalars['BigInt']['input']>;
-  timestamp_gte?: InputMaybe<Scalars['BigInt']['input']>;
-  timestamp_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  timestamp_lt?: InputMaybe<Scalars['BigInt']['input']>;
-  timestamp_lte?: InputMaybe<Scalars['BigInt']['input']>;
-  timestamp_not?: InputMaybe<Scalars['BigInt']['input']>;
-  timestamp_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  toX?: InputMaybe<Scalars['BigInt']['input']>;
-  toX_gt?: InputMaybe<Scalars['BigInt']['input']>;
-  toX_gte?: InputMaybe<Scalars['BigInt']['input']>;
-  toX_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  toX_lt?: InputMaybe<Scalars['BigInt']['input']>;
-  toX_lte?: InputMaybe<Scalars['BigInt']['input']>;
-  toX_not?: InputMaybe<Scalars['BigInt']['input']>;
-  toX_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  toY?: InputMaybe<Scalars['BigInt']['input']>;
-  toY_gt?: InputMaybe<Scalars['BigInt']['input']>;
-  toY_gte?: InputMaybe<Scalars['BigInt']['input']>;
-  toY_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  toY_lt?: InputMaybe<Scalars['BigInt']['input']>;
-  toY_lte?: InputMaybe<Scalars['BigInt']['input']>;
-  toY_not?: InputMaybe<Scalars['BigInt']['input']>;
-  toY_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
-  transactionHash?: InputMaybe<Scalars['String']['input']>;
-  transactionHash_contains?: InputMaybe<Scalars['String']['input']>;
-  transactionHash_ends_with?: InputMaybe<Scalars['String']['input']>;
-  transactionHash_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  transactionHash_not?: InputMaybe<Scalars['String']['input']>;
-  transactionHash_not_contains?: InputMaybe<Scalars['String']['input']>;
-  transactionHash_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  transactionHash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  transactionHash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  transactionHash_starts_with?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MovePage = {
-  __typename?: 'MovePage';
-  items: Array<Move>;
-  pageInfo: PageInfo;
-  totalCount: Scalars['Int']['output'];
-};
-
 export type PageInfo = {
   __typename?: 'PageInfo';
   endCursor?: Maybe<Scalars['String']['output']>;
@@ -1120,9 +1110,56 @@ export type PlayerWeeklyLootPage = {
   totalCount: Scalars['Int']['output'];
 };
 
+export type PlayerWeeklyStars = {
+  __typename?: 'PlayerWeeklyStars';
+  player?: Maybe<Player>;
+  starsCount: Scalars['BigInt']['output'];
+  week: Scalars['Int']['output'];
+};
+
+export type PlayerWeeklyStarsFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PlayerWeeklyStarsFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PlayerWeeklyStarsFilter>>>;
+  player?: InputMaybe<Scalars['String']['input']>;
+  player_contains?: InputMaybe<Scalars['String']['input']>;
+  player_ends_with?: InputMaybe<Scalars['String']['input']>;
+  player_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_not?: InputMaybe<Scalars['String']['input']>;
+  player_not_contains?: InputMaybe<Scalars['String']['input']>;
+  player_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  player_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  player_starts_with?: InputMaybe<Scalars['String']['input']>;
+  starsCount?: InputMaybe<Scalars['BigInt']['input']>;
+  starsCount_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  starsCount_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  starsCount_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  starsCount_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  starsCount_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  starsCount_not?: InputMaybe<Scalars['BigInt']['input']>;
+  starsCount_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  week?: InputMaybe<Scalars['Int']['input']>;
+  week_gt?: InputMaybe<Scalars['Int']['input']>;
+  week_gte?: InputMaybe<Scalars['Int']['input']>;
+  week_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  week_lt?: InputMaybe<Scalars['Int']['input']>;
+  week_lte?: InputMaybe<Scalars['Int']['input']>;
+  week_not?: InputMaybe<Scalars['Int']['input']>;
+  week_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+};
+
+export type PlayerWeeklyStarsPage = {
+  __typename?: 'PlayerWeeklyStarsPage';
+  items: Array<PlayerWeeklyStars>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
 export type Query = {
   __typename?: 'Query';
   _meta?: Maybe<Meta>;
+  cachedUsers?: Maybe<CachedUsers>;
+  cachedUserss: CachedUsersPage;
   drop?: Maybe<Drop>;
   dropSetting?: Maybe<DropSetting>;
   dropSettings: DropSettingPage;
@@ -1135,24 +1172,43 @@ export type Query = {
   lootEvents: LootEventPage;
   lootTokenRange?: Maybe<LootTokenRange>;
   lootTokenRanges: LootTokenRangePage;
-  move?: Maybe<Move>;
-  moves: MovePage;
   player?: Maybe<Player>;
   playerShips?: Maybe<PlayerShips>;
   playerShipss: PlayerShipsPage;
   playerWeeklyLoot?: Maybe<PlayerWeeklyLoot>;
   playerWeeklyLoots: PlayerWeeklyLootPage;
+  playerWeeklyStars?: Maybe<PlayerWeeklyStars>;
+  playerWeeklyStarss: PlayerWeeklyStarsPage;
   players: PlayerPage;
   ship?: Maybe<Ship>;
   ships: ShipPage;
   story?: Maybe<Story>;
   storys: StoryPage;
+  systemPayload?: Maybe<SystemPayload>;
+  systemPayloads: SystemPayloadPage;
   tokenLootStat?: Maybe<TokenLootStat>;
   tokenLootStats: TokenLootStatPage;
+  tokens?: Maybe<Tokens>;
+  tokenss: TokensPage;
   undiscoveredStar?: Maybe<UndiscoveredStar>;
   undiscoveredStars: UndiscoveredStarPage;
   worldSettings?: Maybe<WorldSettings>;
   worldSettingss: WorldSettingsPage;
+};
+
+
+export type QueryCachedUsersArgs = {
+  address: Scalars['String']['input'];
+};
+
+
+export type QueryCachedUserssArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<CachedUsersFilter>;
 };
 
 
@@ -1248,21 +1304,6 @@ export type QueryLootTokenRangesArgs = {
 };
 
 
-export type QueryMoveArgs = {
-  id: Scalars['String']['input'];
-};
-
-
-export type QueryMovesArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<Scalars['String']['input']>;
-  orderDirection?: InputMaybe<Scalars['String']['input']>;
-  where?: InputMaybe<MoveFilter>;
-};
-
-
 export type QueryPlayerArgs = {
   address: Scalars['String']['input'];
 };
@@ -1297,6 +1338,22 @@ export type QueryPlayerWeeklyLootsArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   orderDirection?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<PlayerWeeklyLootFilter>;
+};
+
+
+export type QueryPlayerWeeklyStarsArgs = {
+  player: Scalars['String']['input'];
+  week: Scalars['Float']['input'];
+};
+
+
+export type QueryPlayerWeeklyStarssArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<PlayerWeeklyStarsFilter>;
 };
 
 
@@ -1340,6 +1397,22 @@ export type QueryStorysArgs = {
 };
 
 
+export type QuerySystemPayloadArgs = {
+  dropId: Scalars['BigInt']['input'];
+  entityId: Scalars['BigInt']['input'];
+};
+
+
+export type QuerySystemPayloadsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<SystemPayloadFilter>;
+};
+
+
 export type QueryTokenLootStatArgs = {
   token: Scalars['String']['input'];
 };
@@ -1352,6 +1425,21 @@ export type QueryTokenLootStatsArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   orderDirection?: InputMaybe<Scalars['String']['input']>;
   where?: InputMaybe<TokenLootStatFilter>;
+};
+
+
+export type QueryTokensArgs = {
+  token: Scalars['String']['input'];
+};
+
+
+export type QueryTokenssArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  where?: InputMaybe<TokensFilter>;
 };
 
 
@@ -1471,6 +1559,7 @@ export type Story = {
   entityId?: Maybe<Scalars['BigInt']['output']>;
   id: Scalars['BigInt']['output'];
   image?: Maybe<Scalars['String']['output']>;
+  isVideo?: Maybe<Scalars['Boolean']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   prompt?: Maybe<Scalars['String']['output']>;
   status?: Maybe<StoryStatus>;
@@ -1478,6 +1567,7 @@ export type Story = {
   timestamp?: Maybe<Scalars['BigInt']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   transactionHash?: Maybe<Scalars['String']['output']>;
+  video?: Maybe<Scalars['String']['output']>;
 };
 
 export type StoryFilter = {
@@ -1529,6 +1619,10 @@ export type StoryFilter = {
   image_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   image_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   image_starts_with?: InputMaybe<Scalars['String']['input']>;
+  isVideo?: InputMaybe<Scalars['Boolean']['input']>;
+  isVideo_in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>;
+  isVideo_not?: InputMaybe<Scalars['Boolean']['input']>;
+  isVideo_not_in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>;
   name?: InputMaybe<Scalars['String']['input']>;
   name_contains?: InputMaybe<Scalars['String']['input']>;
   name_ends_with?: InputMaybe<Scalars['String']['input']>;
@@ -1591,11 +1685,116 @@ export type StoryFilter = {
   transactionHash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   transactionHash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   transactionHash_starts_with?: InputMaybe<Scalars['String']['input']>;
+  video?: InputMaybe<Scalars['String']['input']>;
+  video_contains?: InputMaybe<Scalars['String']['input']>;
+  video_ends_with?: InputMaybe<Scalars['String']['input']>;
+  video_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  video_not?: InputMaybe<Scalars['String']['input']>;
+  video_not_contains?: InputMaybe<Scalars['String']['input']>;
+  video_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  video_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  video_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  video_starts_with?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type StoryPage = {
   __typename?: 'StoryPage';
   items: Array<Story>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
+export type SystemPayload = {
+  __typename?: 'SystemPayload';
+  amount?: Maybe<Scalars['BigInt']['output']>;
+  claimed: Scalars['Boolean']['output'];
+  claimedAt?: Maybe<Scalars['BigInt']['output']>;
+  claimedBy?: Maybe<Player>;
+  dropId?: Maybe<Scalars['BigInt']['output']>;
+  droppedAt: Scalars['BigInt']['output'];
+  entity?: Maybe<Entity>;
+  entityId?: Maybe<Scalars['BigInt']['output']>;
+  removed: Scalars['Boolean']['output'];
+  token?: Maybe<Tokens>;
+  tokenAddress?: Maybe<Scalars['String']['output']>;
+};
+
+export type SystemPayloadFilter = {
+  AND?: InputMaybe<Array<InputMaybe<SystemPayloadFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<SystemPayloadFilter>>>;
+  amount?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  amount_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_not?: InputMaybe<Scalars['BigInt']['input']>;
+  amount_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  claimed?: InputMaybe<Scalars['Boolean']['input']>;
+  claimedAt?: InputMaybe<Scalars['BigInt']['input']>;
+  claimedAt_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  claimedAt_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  claimedAt_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  claimedAt_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  claimedAt_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  claimedAt_not?: InputMaybe<Scalars['BigInt']['input']>;
+  claimedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  claimedBy?: InputMaybe<Scalars['String']['input']>;
+  claimedBy_contains?: InputMaybe<Scalars['String']['input']>;
+  claimedBy_ends_with?: InputMaybe<Scalars['String']['input']>;
+  claimedBy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  claimedBy_not?: InputMaybe<Scalars['String']['input']>;
+  claimedBy_not_contains?: InputMaybe<Scalars['String']['input']>;
+  claimedBy_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  claimedBy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  claimedBy_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  claimedBy_starts_with?: InputMaybe<Scalars['String']['input']>;
+  claimed_in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>;
+  claimed_not?: InputMaybe<Scalars['Boolean']['input']>;
+  claimed_not_in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>;
+  dropId?: InputMaybe<Scalars['BigInt']['input']>;
+  dropId_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  dropId_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  dropId_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  dropId_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  dropId_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  dropId_not?: InputMaybe<Scalars['BigInt']['input']>;
+  dropId_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  droppedAt?: InputMaybe<Scalars['BigInt']['input']>;
+  droppedAt_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  droppedAt_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  droppedAt_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  droppedAt_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  droppedAt_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  droppedAt_not?: InputMaybe<Scalars['BigInt']['input']>;
+  droppedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  entityId?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  entityId_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_not?: InputMaybe<Scalars['BigInt']['input']>;
+  entityId_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  removed?: InputMaybe<Scalars['Boolean']['input']>;
+  removed_in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>;
+  removed_not?: InputMaybe<Scalars['Boolean']['input']>;
+  removed_not_in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>;
+  tokenAddress?: InputMaybe<Scalars['String']['input']>;
+  tokenAddress_contains?: InputMaybe<Scalars['String']['input']>;
+  tokenAddress_ends_with?: InputMaybe<Scalars['String']['input']>;
+  tokenAddress_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tokenAddress_not?: InputMaybe<Scalars['String']['input']>;
+  tokenAddress_not_contains?: InputMaybe<Scalars['String']['input']>;
+  tokenAddress_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  tokenAddress_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tokenAddress_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  tokenAddress_starts_with?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type SystemPayloadPage = {
+  __typename?: 'SystemPayloadPage';
+  items: Array<SystemPayload>;
   pageInfo: PageInfo;
   totalCount: Scalars['Int']['output'];
 };
@@ -1642,6 +1841,64 @@ export type TokenLootStatFilter = {
 export type TokenLootStatPage = {
   __typename?: 'TokenLootStatPage';
   items: Array<TokenLootStat>;
+  pageInfo: PageInfo;
+  totalCount: Scalars['Int']['output'];
+};
+
+export type Tokens = {
+  __typename?: 'Tokens';
+  token: Scalars['String']['output'];
+  tokenDecimals?: Maybe<Scalars['Int']['output']>;
+  tokenName?: Maybe<Scalars['String']['output']>;
+  tokenSymbol?: Maybe<Scalars['String']['output']>;
+};
+
+export type TokensFilter = {
+  AND?: InputMaybe<Array<InputMaybe<TokensFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<TokensFilter>>>;
+  token?: InputMaybe<Scalars['String']['input']>;
+  tokenDecimals?: InputMaybe<Scalars['Int']['input']>;
+  tokenDecimals_gt?: InputMaybe<Scalars['Int']['input']>;
+  tokenDecimals_gte?: InputMaybe<Scalars['Int']['input']>;
+  tokenDecimals_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  tokenDecimals_lt?: InputMaybe<Scalars['Int']['input']>;
+  tokenDecimals_lte?: InputMaybe<Scalars['Int']['input']>;
+  tokenDecimals_not?: InputMaybe<Scalars['Int']['input']>;
+  tokenDecimals_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  tokenName?: InputMaybe<Scalars['String']['input']>;
+  tokenName_contains?: InputMaybe<Scalars['String']['input']>;
+  tokenName_ends_with?: InputMaybe<Scalars['String']['input']>;
+  tokenName_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tokenName_not?: InputMaybe<Scalars['String']['input']>;
+  tokenName_not_contains?: InputMaybe<Scalars['String']['input']>;
+  tokenName_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  tokenName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tokenName_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  tokenName_starts_with?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol_contains?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol_ends_with?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tokenSymbol_not?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol_not_contains?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  tokenSymbol_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  tokenSymbol_starts_with?: InputMaybe<Scalars['String']['input']>;
+  token_contains?: InputMaybe<Scalars['String']['input']>;
+  token_ends_with?: InputMaybe<Scalars['String']['input']>;
+  token_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  token_not?: InputMaybe<Scalars['String']['input']>;
+  token_not_contains?: InputMaybe<Scalars['String']['input']>;
+  token_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  token_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  token_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  token_starts_with?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type TokensPage = {
+  __typename?: 'TokensPage';
+  items: Array<Tokens>;
   pageInfo: PageInfo;
   totalCount: Scalars['Int']['output'];
 };
@@ -1952,6 +2209,45 @@ export enum StoryStatus {
   Pending = 'Pending'
 }
 
+export type SystemPayloadQueryVariables = Exact<{
+  entityId: Scalars['BigInt']['input'];
+  dropId: Scalars['BigInt']['input'];
+}>;
+
+
+export type SystemPayloadQuery = { __typename?: 'Query', systemPayload?: { __typename?: 'SystemPayload', entityId?: any | null, dropId?: any | null, tokenAddress?: string | null, amount?: any | null, claimed: boolean, claimedAt?: any | null, removed: boolean, droppedAt: any, claimedBy?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalMoves: number, totalStories: number, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, gameX?: number | null, gameY?: number | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, token?: { __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null } | null } | null };
+
+export type SystemPayloadsQueryVariables = Exact<{
+  where?: InputMaybe<SystemPayloadFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type SystemPayloadsQuery = { __typename?: 'Query', systemPayloads: { __typename?: 'SystemPayloadPage', totalCount: number, items: Array<{ __typename?: 'SystemPayload', entityId?: any | null, dropId?: any | null, tokenAddress?: string | null, amount?: any | null, claimed: boolean, claimedAt?: any | null, removed: boolean, droppedAt: any, token?: { __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null } | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, name?: string | null, gameX?: number | null, gameY?: number | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, type?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+
+export type TokensQueryVariables = Exact<{
+  token: Scalars['String']['input'];
+}>;
+
+
+export type TokensQuery = { __typename?: 'Query', tokens?: { __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null } | null };
+
+export type TokenssQueryVariables = Exact<{
+  where?: InputMaybe<TokensFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type TokenssQuery = { __typename?: 'Query', tokenss: { __typename?: 'TokensPage', totalCount: number, items: Array<{ __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+
 export type UndiscoveredStarQueryVariables = Exact<{
   id: Scalars['BigInt']['input'];
 }>;
@@ -2187,7 +2483,7 @@ export type StoryQueryVariables = Exact<{
 }>;
 
 
-export type StoryQuery = { __typename?: 'Query', story?: { __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, status?: StoryStatus | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null } | null };
+export type StoryQuery = { __typename?: 'Query', story?: { __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, title?: string | null, prompt?: string | null, isVideo?: boolean | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, video?: string | null, name?: string | null, status?: StoryStatus | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null } | null };
 
 export type StorysQueryVariables = Exact<{
   where?: InputMaybe<StoryFilter>;
@@ -2199,26 +2495,7 @@ export type StorysQueryVariables = Exact<{
 }>;
 
 
-export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, status?: StoryStatus | null, title?: string | null, prompt?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null, discoveredBy?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, power: number, createdAt?: any | null } | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
-
-export type MoveQueryVariables = Exact<{
-  id: Scalars['String']['input'];
-}>;
-
-
-export type MoveQuery = { __typename?: 'Query', move?: { __typename?: 'Move', id: string, player?: string | null, fromX?: any | null, fromY?: any | null, toX?: any | null, toY?: any | null, arrivingAt?: any | null, timestamp?: any | null, transactionHash?: string | null } | null };
-
-export type MovesQueryVariables = Exact<{
-  where?: InputMaybe<MoveFilter>;
-  orderBy?: InputMaybe<Scalars['String']['input']>;
-  orderDirection?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-}>;
-
-
-export type MovesQuery = { __typename?: 'Query', moves: { __typename?: 'MovePage', totalCount: number, items: Array<{ __typename?: 'Move', id: string, player?: string | null, fromX?: any | null, fromY?: any | null, toX?: any | null, toY?: any | null, arrivingAt?: any | null, timestamp?: any | null, transactionHash?: string | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type StorysQuery = { __typename?: 'Query', storys: { __typename?: 'StoryPage', items: Array<{ __typename?: 'Story', id: any, entityId?: any | null, creator?: string | null, status?: StoryStatus | null, title?: string | null, prompt?: string | null, isVideo?: boolean | null, video?: string | null, transactionHash?: string | null, timestamp?: any | null, coin?: string | null, image?: string | null, name?: string | null, symbol?: string | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null, discoveredBy?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, power: number, createdAt?: any | null } | null } | null, creatorPlayer?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type PlayerShipsQueryVariables = Exact<{
   player: Scalars['String']['input'];
@@ -2285,7 +2562,180 @@ export type PlayersFleetsQueryVariables = Exact<{
 
 export type PlayersFleetsQuery = { __typename?: 'Query', players: { __typename?: 'PlayerPage', items: Array<{ __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number, anchoredTo?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null } | null, ships?: { __typename?: 'PlayerShipsPage', items: Array<{ __typename?: 'PlayerShips', tokenId: any, amount: any, ship?: { __typename?: 'Ship', tokenId: any, name?: string | null, image?: string | null, description?: string | null, shipImage?: string | null, chainId: number } | null }> } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
+export type PlayerWeeklyStarsQueryVariables = Exact<{
+  player: Scalars['String']['input'];
+  week: Scalars['Float']['input'];
+}>;
 
+
+export type PlayerWeeklyStarsQuery = { __typename?: 'Query', playerWeeklyStars?: { __typename?: 'PlayerWeeklyStars', week: number, starsCount: any, player?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalMoves: number, totalStories: number, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null } | null };
+
+export type PlayerWeeklyStarssQueryVariables = Exact<{
+  where?: InputMaybe<PlayerWeeklyStarsFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type PlayerWeeklyStarssQuery = { __typename?: 'Query', playerWeeklyStarss: { __typename?: 'PlayerWeeklyStarsPage', totalCount: number, items: Array<{ __typename?: 'PlayerWeeklyStars', week: number, starsCount: any, player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+
+
+export const SystemPayloadDocument = gql`
+    query systemPayload($entityId: BigInt!, $dropId: BigInt!) {
+  systemPayload(entityId: $entityId, dropId: $dropId) {
+    entityId
+    dropId
+    tokenAddress
+    amount
+    claimed
+    claimedAt
+    claimedBy {
+      address
+      anchoredToStarId
+      previousX
+      previousY
+      x
+      y
+      quadrantX
+      quadrantY
+      speed
+      arrivingAt
+      lastMovedAt
+      lastWormholeUsedAt
+      lastMoveTransactionHash
+      totalMoves
+      totalStories
+      totalDistanceTraveled
+      holding
+      totalBurned
+      discoveredCount
+      lastLootedDay
+      lootCount
+      allTimeLootCount
+      lootStreak
+      fid
+      fromClientFid
+      pfpUrl
+      username
+      ens
+      createdAt
+      power
+    }
+    removed
+    droppedAt
+    entity {
+      id
+      x
+      y
+      gameX
+      gameY
+      quadrantX
+      quadrantY
+      radius
+      discoveredAt
+      name
+      type
+      entityType
+      module
+      moduleName
+    }
+    token {
+      token
+      tokenName
+      tokenSymbol
+      tokenDecimals
+    }
+  }
+}
+    `;
+export const SystemPayloadsDocument = gql`
+    query systemPayloads($where: SystemPayloadFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  systemPayloads(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    items {
+      entityId
+      dropId
+      tokenAddress
+      amount
+      claimed
+      claimedAt
+      removed
+      droppedAt
+      token {
+        token
+        tokenName
+        tokenSymbol
+        tokenDecimals
+      }
+      entity {
+        id
+        x
+        y
+        name
+        gameX
+        gameY
+        quadrantX
+        quadrantY
+        radius
+        discoveredAt
+        type
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}
+    `;
+export const TokensDocument = gql`
+    query tokens($token: String!) {
+  tokens(token: $token) {
+    token
+    tokenName
+    tokenSymbol
+    tokenDecimals
+  }
+}
+    `;
+export const TokenssDocument = gql`
+    query tokenss($where: TokensFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  tokenss(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    items {
+      token
+      tokenName
+      tokenSymbol
+      tokenDecimals
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}
+    `;
 export const UndiscoveredStarDocument = gql`
     query undiscoveredStar($id: BigInt!) {
   undiscoveredStar(id: $id) {
@@ -3139,10 +3589,12 @@ export const StoryDocument = gql`
     creator
     title
     prompt
+    isVideo
     transactionHash
     timestamp
     coin
     image
+    video
     name
     status
     symbol
@@ -3288,6 +3740,8 @@ export const StorysDocument = gql`
       }
       title
       prompt
+      isVideo
+      video
       transactionHash
       timestamp
       coin
@@ -3301,52 +3755,6 @@ export const StorysDocument = gql`
       startCursor
       endCursor
     }
-  }
-}
-    `;
-export const MoveDocument = gql`
-    query move($id: String!) {
-  move(id: $id) {
-    id
-    player
-    fromX
-    fromY
-    toX
-    toY
-    arrivingAt
-    timestamp
-    transactionHash
-  }
-}
-    `;
-export const MovesDocument = gql`
-    query moves($where: MoveFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
-  moves(
-    where: $where
-    orderBy: $orderBy
-    orderDirection: $orderDirection
-    before: $before
-    after: $after
-    limit: $limit
-  ) {
-    items {
-      id
-      player
-      fromX
-      fromY
-      toX
-      toY
-      arrivingAt
-      timestamp
-      transactionHash
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-    totalCount
   }
 }
     `;
@@ -3603,6 +4011,100 @@ export const PlayersFleetsDocument = gql`
   }
 }
     `;
+export const PlayerWeeklyStarsDocument = gql`
+    query playerWeeklyStars($player: String!, $week: Float!) {
+  playerWeeklyStars(player: $player, week: $week) {
+    player {
+      address
+      anchoredToStarId
+      previousX
+      previousY
+      x
+      y
+      quadrantX
+      quadrantY
+      speed
+      arrivingAt
+      lastMovedAt
+      lastWormholeUsedAt
+      lastMoveTransactionHash
+      totalMoves
+      totalStories
+      totalDistanceTraveled
+      holding
+      totalBurned
+      discoveredCount
+      lastLootedDay
+      lootCount
+      allTimeLootCount
+      lootStreak
+      fid
+      fromClientFid
+      pfpUrl
+      username
+      ens
+      createdAt
+      power
+    }
+    week
+    starsCount
+  }
+}
+    `;
+export const PlayerWeeklyStarssDocument = gql`
+    query playerWeeklyStarss($where: PlayerWeeklyStarsFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  playerWeeklyStarss(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    items {
+      player {
+        address
+        previousX
+        previousY
+        x
+        y
+        quadrantX
+        quadrantY
+        speed
+        arrivingAt
+        lastMovedAt
+        totalMoves
+        totalStories
+        lastMoveTransactionHash
+        totalDistanceTraveled
+        holding
+        totalBurned
+        discoveredCount
+        lastLootedDay
+        lootCount
+        allTimeLootCount
+        lootStreak
+        fid
+        fromClientFid
+        pfpUrl
+        username
+        ens
+        createdAt
+        power
+      }
+      week
+      starsCount
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
 
@@ -3611,6 +4113,18 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    systemPayload(variables: SystemPayloadQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<SystemPayloadQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SystemPayloadQuery>(SystemPayloadDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'systemPayload', 'query', variables);
+    },
+    systemPayloads(variables?: SystemPayloadsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<SystemPayloadsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SystemPayloadsQuery>(SystemPayloadsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'systemPayloads', 'query', variables);
+    },
+    tokens(variables: TokensQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TokensQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TokensQuery>(TokensDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'tokens', 'query', variables);
+    },
+    tokenss(variables?: TokenssQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<TokenssQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TokenssQuery>(TokenssDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'tokenss', 'query', variables);
+    },
     undiscoveredStar(variables: UndiscoveredStarQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<UndiscoveredStarQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<UndiscoveredStarQuery>(UndiscoveredStarDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'undiscoveredStar', 'query', variables);
     },
@@ -3683,12 +4197,6 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     storys(variables?: StorysQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<StorysQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<StorysQuery>(StorysDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'storys', 'query', variables);
     },
-    move(variables: MoveQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MoveQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<MoveQuery>(MoveDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'move', 'query', variables);
-    },
-    moves(variables?: MovesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MovesQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<MovesQuery>(MovesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'moves', 'query', variables);
-    },
     playerShips(variables: PlayerShipsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayerShipsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PlayerShipsQuery>(PlayerShipsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'playerShips', 'query', variables);
     },
@@ -3706,6 +4214,12 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     playersFleets(variables?: PlayersFleetsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayersFleetsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PlayersFleetsQuery>(PlayersFleetsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'playersFleets', 'query', variables);
+    },
+    playerWeeklyStars(variables: PlayerWeeklyStarsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayerWeeklyStarsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PlayerWeeklyStarsQuery>(PlayerWeeklyStarsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'playerWeeklyStars', 'query', variables);
+    },
+    playerWeeklyStarss(variables?: PlayerWeeklyStarssQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayerWeeklyStarssQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PlayerWeeklyStarssQuery>(PlayerWeeklyStarssDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'playerWeeklyStarss', 'query', variables);
     }
   };
 }
