@@ -1714,6 +1714,8 @@ export type SystemPayload = {
   droppedAt: Scalars['BigInt']['output'];
   entity?: Maybe<Entity>;
   entityId?: Maybe<Scalars['BigInt']['output']>;
+  quadrantX?: Maybe<Scalars['Int']['output']>;
+  quadrantY?: Maybe<Scalars['Int']['output']>;
   removed: Scalars['Boolean']['output'];
   token?: Maybe<Tokens>;
   tokenAddress?: Maybe<Scalars['String']['output']>;
@@ -1776,6 +1778,22 @@ export type SystemPayloadFilter = {
   entityId_lte?: InputMaybe<Scalars['BigInt']['input']>;
   entityId_not?: InputMaybe<Scalars['BigInt']['input']>;
   entityId_not_in?: InputMaybe<Array<InputMaybe<Scalars['BigInt']['input']>>>;
+  quadrantX?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_gt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_gte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  quadrantX_lt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_lte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_not?: InputMaybe<Scalars['Int']['input']>;
+  quadrantX_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  quadrantY?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_gt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_gte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  quadrantY_lt?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_lte?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_not?: InputMaybe<Scalars['Int']['input']>;
+  quadrantY_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
   removed?: InputMaybe<Scalars['Boolean']['input']>;
   removed_in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']['input']>>>;
   removed_not?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2215,7 +2233,7 @@ export type SystemPayloadQueryVariables = Exact<{
 }>;
 
 
-export type SystemPayloadQuery = { __typename?: 'Query', systemPayload?: { __typename?: 'SystemPayload', entityId?: any | null, dropId?: any | null, tokenAddress?: string | null, amount?: any | null, claimed: boolean, claimedAt?: any | null, removed: boolean, droppedAt: any, claimedBy?: { __typename?: 'Player', address: string, anchoredToStarId?: any | null, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalMoves: number, totalStories: number, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number } | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, gameX?: number | null, gameY?: number | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, token?: { __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null } | null } | null };
+export type SystemPayloadQuery = { __typename?: 'Query', systemPayload?: { __typename?: 'SystemPayload', entityId?: any | null, quadrantX?: number | null, quadrantY?: number | null, dropId?: any | null, tokenAddress?: string | null, amount?: any | null, claimed: boolean, claimedAt?: any | null, removed: boolean, droppedAt: any, claimedBy?: { __typename?: 'Player', address: string, username?: string | null, pfpUrl?: string | null, ens?: any | null } | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, gameX?: number | null, gameY?: number | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null, entityType?: EntityType | null, module?: string | null, moduleName?: string | null } | null, token?: { __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null } | null } | null };
 
 export type SystemPayloadsQueryVariables = Exact<{
   where?: InputMaybe<SystemPayloadFilter>;
@@ -2227,7 +2245,7 @@ export type SystemPayloadsQueryVariables = Exact<{
 }>;
 
 
-export type SystemPayloadsQuery = { __typename?: 'Query', systemPayloads: { __typename?: 'SystemPayloadPage', totalCount: number, items: Array<{ __typename?: 'SystemPayload', entityId?: any | null, dropId?: any | null, tokenAddress?: string | null, amount?: any | null, claimed: boolean, claimedAt?: any | null, removed: boolean, droppedAt: any, token?: { __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null } | null, entity?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, name?: string | null, gameX?: number | null, gameY?: number | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, type?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
+export type SystemPayloadsQuery = { __typename?: 'Query', systemPayloads: { __typename?: 'SystemPayloadPage', totalCount: number, items: Array<{ __typename?: 'SystemPayload', entityId?: any | null, quadrantX?: number | null, quadrantY?: number | null, dropId?: any | null, tokenAddress?: string | null, amount?: any | null, claimed: boolean, claimedAt?: any | null, removed: boolean, droppedAt: any, claimedBy?: { __typename?: 'Player', address: string, username?: string | null, pfpUrl?: string | null, ens?: any | null } | null, token?: { __typename?: 'Tokens', token: string, tokenName?: string | null, tokenSymbol?: string | null, tokenDecimals?: number | null } | null, entity?: { __typename?: 'Entity', entityType?: EntityType | null, id: any, x?: any | null, y?: any | null, name?: string | null, gameX?: number | null, gameY?: number | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, type?: any | null } | null }>, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null, endCursor?: string | null } } };
 
 export type TokensQueryVariables = Exact<{
   token: Scalars['String']['input'];
@@ -2292,6 +2310,18 @@ export type PlayerQueryVariables = Exact<{
 
 
 export type PlayerQuery = { __typename?: 'Query', player?: { __typename?: 'Player', address: string, previousX?: any | null, previousY?: any | null, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, speed?: any | null, arrivingAt?: any | null, lastMovedAt?: any | null, totalMoves: number, totalStories: number, lastWormholeUsedAt?: any | null, lastMoveTransactionHash?: string | null, totalDistanceTraveled: any, holding: any, totalBurned: any, discoveredCount: any, lastLootedDay?: any | null, lootCount: any, allTimeLootCount: any, lootStreak: any, fid?: string | null, fromClientFid?: string | null, pfpUrl?: string | null, username?: string | null, ens?: any | null, createdAt?: any | null, power: number, anchoredTo?: { __typename?: 'Entity', id: any, x?: any | null, y?: any | null, quadrantX?: number | null, quadrantY?: number | null, radius?: any | null, discoveredAt?: any | null, name?: string | null, type?: any | null } | null } | null };
+
+export type PlayersCountQueryVariables = Exact<{
+  where?: InputMaybe<PlayerFilter>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  orderDirection?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type PlayersCountQuery = { __typename?: 'Query', players: { __typename?: 'PlayerPage', totalCount: number } };
 
 export type PlayersQueryVariables = Exact<{
   where?: InputMaybe<PlayerFilter>;
@@ -2587,6 +2617,8 @@ export const SystemPayloadDocument = gql`
     query systemPayload($entityId: BigInt!, $dropId: BigInt!) {
   systemPayload(entityId: $entityId, dropId: $dropId) {
     entityId
+    quadrantX
+    quadrantY
     dropId
     tokenAddress
     amount
@@ -2594,35 +2626,9 @@ export const SystemPayloadDocument = gql`
     claimedAt
     claimedBy {
       address
-      anchoredToStarId
-      previousX
-      previousY
-      x
-      y
-      quadrantX
-      quadrantY
-      speed
-      arrivingAt
-      lastMovedAt
-      lastWormholeUsedAt
-      lastMoveTransactionHash
-      totalMoves
-      totalStories
-      totalDistanceTraveled
-      holding
-      totalBurned
-      discoveredCount
-      lastLootedDay
-      lootCount
-      allTimeLootCount
-      lootStreak
-      fid
-      fromClientFid
-      pfpUrl
       username
+      pfpUrl
       ens
-      createdAt
-      power
     }
     removed
     droppedAt
@@ -2663,11 +2669,19 @@ export const SystemPayloadsDocument = gql`
   ) {
     items {
       entityId
+      quadrantX
+      quadrantY
       dropId
       tokenAddress
       amount
       claimed
       claimedAt
+      claimedBy {
+        address
+        username
+        pfpUrl
+        ens
+      }
       removed
       droppedAt
       token {
@@ -2677,6 +2691,7 @@ export const SystemPayloadsDocument = gql`
         tokenDecimals
       }
       entity {
+        entityType
         id
         x
         y
@@ -2873,6 +2888,20 @@ export const PlayerDocument = gql`
       name
       type
     }
+  }
+}
+    `;
+export const PlayersCountDocument = gql`
+    query playersCount($where: PlayerFilter, $orderBy: String, $orderDirection: String, $before: String, $after: String, $limit: Int) {
+  players(
+    where: $where
+    orderBy: $orderBy
+    orderDirection: $orderDirection
+    before: $before
+    after: $after
+    limit: $limit
+  ) {
+    totalCount
   }
 }
     `;
@@ -4139,6 +4168,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     player(variables: PlayerQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayerQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PlayerQuery>(PlayerDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'player', 'query', variables);
+    },
+    playersCount(variables?: PlayersCountQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayersCountQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PlayersCountQuery>(PlayersCountDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'playersCount', 'query', variables);
     },
     players(variables?: PlayersQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PlayersQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PlayersQuery>(PlayersDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'players', 'query', variables);
